@@ -181,15 +181,15 @@ public class KafkaRollerST extends AbstractST {
         KafkaResource.createAndWaitForReadiness(KafkaResource.kafkaPersistent(clusterName, 3, 3).build());
 
         KafkaResource.replaceKafkaResource(clusterName, kafka -> {
-            kafka.getSpec().getKafka().setImage("quay.io/strimzi/kafka:not-existent-tag");
-            kafka.getSpec().getZookeeper().setImage(StUtils.changeOrgAndTag("quay.io/strimzi/kafka:latest-kafka-" + Environment.ST_KAFKA_VERSION));
+            kafka.getSpec().getKafka().setImage("tuanhoang1/operator:not-existent-tag");
+            kafka.getSpec().getZookeeper().setImage(StUtils.changeOrgAndTag("tuanhoang1/operator:latest-kafka-" + Environment.ST_KAFKA_VERSION));
         });
 
         KafkaUtils.waitForKafkaNotReady(clusterName);
 
         assertTrue(checkIfExactlyOneKafkaPodIsNotReady(clusterName));
 
-        KafkaResource.replaceKafkaResource(clusterName, kafka -> kafka.getSpec().getKafka().setImage(StUtils.changeOrgAndTag("quay.io/strimzi/kafka:latest-kafka-" + Environment.ST_KAFKA_VERSION)));
+        KafkaResource.replaceKafkaResource(clusterName, kafka -> kafka.getSpec().getKafka().setImage(StUtils.changeOrgAndTag("tuanhoang1/operator:latest-kafka-" + Environment.ST_KAFKA_VERSION)));
 
         // kafka should get back ready in some reasonable time frame.
         // Current timeout for wait is set to 14 minutes, which should be enough.

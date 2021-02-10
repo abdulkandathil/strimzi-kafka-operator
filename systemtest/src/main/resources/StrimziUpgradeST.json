@@ -266,14 +266,14 @@
     "urlTo":"https://github.com/strimzi/strimzi-kafka-operator/releases/download/0.21.1/strimzi-0.21.1.zip",
     "generateTopics": true,
     "imagesBeforeKafkaUpdate": {
-      "zookeeper": "quay.io/strimzi/kafka:0.21.1-kafka-2.6.0",
-      "kafka": "quay.io/strimzi/kafka:0.21.1-kafka-2.6.0",
+      "zookeeper": "tuanhoang1/operator:0.21.1-kafka-2.6.0",
+      "kafka": "tuanhoang1/operator:0.21.1-kafka-2.6.0",
       "topicOperator": "quay.io/strimzi/operator:0.21.1",
       "userOperator": "quay.io/strimzi/operator:0.21.1"
     },
     "imagesAfterKafkaUpdate": {
-      "zookeeper": "quay.io/strimzi/kafka:0.21.1-kafka-2.7.0",
-      "kafka": "quay.io/strimzi/kafka:0.21.1-kafka-2.7.0",
+      "zookeeper": "tuanhoang1/operator:0.21.1-kafka-2.7.0",
+      "kafka": "tuanhoang1/operator:0.21.1-kafka-2.7.0",
       "topicOperator": "quay.io/strimzi/operator:0.21.1",
       "userOperator": "quay.io/strimzi/operator:0.21.1"
     },
